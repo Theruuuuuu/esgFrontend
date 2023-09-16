@@ -1,0 +1,61 @@
+<div class="">
+    <h1 class="border border-4 border-primary" style="background-color: #181A1B;color: #BEB8B0;">{{items.companyName}}</h1>
+    <br/>
+    <p>{{id}}</p>
+    <div class="border border-4 vh-100" style="background-color: #181A1B;color: #BEB8B0;">
+      <div class="row">
+        <div class="p-5 col-4">            
+          <div class="card border-primary mb-3" style="max-width: 15rem;background-color: black;">
+              <div class="card-body">
+                <h4 class="card-title">sustainalytics</h4>
+                <p class="card-text">{{items.susESG}}</p>
+              </div>
+          </div>
+          <div class="card border-primary mb-3" style="max-width: 15rem;background-color: black;">
+              <div class="card-body">
+                <h4 class="card-title">MSCI</h4>
+                <p class="card-text">{{items.msciESG}}</p>
+              </div>
+          </div>
+          <div class="card border-primary mb-3" style="max-width: 15rem;background-color: black;">
+              <div class="card-body">
+                <h4 class="card-title">FTSE Russell</h4>
+                <p class="card-text">{{items.ftseESG}}</p>
+              </div>
+          </div>
+          <div class="card border-primary mb-3" style="max-width: 15rem;background-color: black;">
+              <div class="card-body">
+                <h4 class="card-title">ISS</h4>
+                <p class="card-text">{{items.issESG}}</p>
+              </div>
+          </div>
+          <div class="card border-primary mb-3" style="max-width: 15rem;background-color: black;">
+              <div class="card-body">
+                <h4 class="card-title">S&P Global</h4>
+                <p class="card-text">{{items.sapESG}}</p>
+              </div>
+          </div>
+          <div class="card border-primary mb-3" style="max-width: 15rem;background-color: black;">
+              <div class="card-body">
+                <h4 class="card-title">台灣公司治理評鑑</h4>
+                <p class="card-text">{{items.twCompanyRank}}</p>
+              </div>
+          </div>
+          <div class="card border-primary mb-3" style="max-width: 15rem;background-color: black;">
+              <div class="card-body">
+                <h4 class="card-title">Refinitiv (Asset4)</h4>
+                <p class="card-text">{{items.refi}}</p>
+              </div>
+          </div>
+        </div> 
+        <div class="p-5 col-8">
+          <button class="btn btn-primary" (click)="getChart()">取得圖表</button>
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+               
+    </div>
+    
+</div>

@@ -1,0 +1,57 @@
+<div class="container pt-5 px-5">
+    <div class="row">
+        <!-- <div class="list-group col-2">
+            <a routerLink="/post/list" routerLinkActive="active" class="list-group-item list-group-item-action active" aria-current="true">
+                <i class="bi bi-info-circle-fill"></i>
+                &ensp; 基本資料
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+            <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+            <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+            <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
+        </div> -->
+        <div class="col-2">
+            <div class="container1">                 
+                <div class="link">
+                    <a routerLink="./test" routerLinkActive="active" style="text-decoration:none;color:azure">
+                        <i class="bi bi-info-circle-fill"></i>
+                        &ensp; HOME
+                    </a>                                          
+                </div>
+                <div class="link">
+                    <a routerLink="test" routerLinkActive="active" style="text-decoration:none;color:azure">
+                        <i class="bi bi-info-circle-fill"></i>
+                        &ensp; HOME
+                    </a>                                          
+                </div><div class="link">
+                    <a routerLink="test" routerLinkActive="active" style="text-decoration:none;color:azure">
+                        <i class="bi bi-info-circle-fill"></i>
+                        &ensp; HOME
+                    </a>                                          
+                </div><div class="link">
+                    <a routerLink="./" routerLinkActive="active" style="text-decoration:none;color:azure">
+                        <i class="bi bi-info-circle-fill"></i>
+                        &ensp; HOME
+                    </a>                                          
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<script>
+    var links = document.getElementsByClassName('link')
+    for (var i = 0; i <= links.length; i++)
+        addClass(i)
+
+
+    function addClass(id) {
+        setTimeout(function () {
+            if (id > 0) links[id - 1].classList.remove('hover')
+            links[id].classList.add('hover')
+        }, id * 750)
+    }
+</script>
