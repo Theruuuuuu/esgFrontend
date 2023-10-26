@@ -1,5 +1,4 @@
 <div class="">
-    <h1 class="border border-4 border-primary" style="background-color: #181A1B;color: #BEB8B0;">{{items.companyName}}</h1>
     <br/>
     <p>{{id}}</p>
     <div class="border border-4 vh-100" style="background-color: #181A1B;color: #BEB8B0;">
@@ -49,7 +48,9 @@
           </div>
         </div> 
         <div class="p-5 col-8">
-          <button class="btn btn-primary" (click)="getChart()">取得圖表</button>
+          <button class="btn btn-primary" value="chart" #data (click)="getChart('chart')">取得直方</button>
+          <button class="btn btn-primary" value="rader" (click)="getradar()">取得雷達</button>
+          <button class="btn btn-primary" value="pie" (click)="getdoughnut()">取得圓餅</button>
           <div>
             <canvas id="myChart"></canvas>
           </div>
