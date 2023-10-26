@@ -1,0 +1,82 @@
+
+*{
+    font-family:微軟正黑體;  
+    
+  }
+  body{
+    background-color: #252525;
+  }
+  
+  h3,#register{
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    color: hwb(206 24% 0%);
+  }
+  #username, #password, #fullname, #comfirm_password,#username2, #password2
+  {
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    color: hwb(0 0% 100%);
+  }
+
+  h5{
+    margin: 20px;
+    color: #474747;
+  }
+  
+  //內容
+  #container1, #container2{
+    //margin: 50px;
+    padding: 10px;
+    width: 240px;
+    height: 305px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border-top: 10px solid hwb(206 24% 0%);
+    box-shadow: 0 0px 10px hwb(206 24% 0%);
+    font-weight: bold;
+    /*定位對齊*/
+    position:relative;   
+    margin: auto;
+    top: 100px;
+    
+    //text-align:center;  
+  }
+  
+  
+  .submit{
+    color: rgb(255, 255, 255);  
+    background: #4274ff;
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+  }
+  
+  .submit:hover{
+    background: #37ffe8;
+  }
+  
+  #container2{
+    visibility: hidden;   /*剛開始消失*/
+    height: 350px;
+  }
+  
+  
+  #copyright{
+    text-align: center;
+    color: #a3a2a3;
+    margin: -200px 0px 0px 0px;
+    font-size: 14px;
+  }
+  
+  input{
+    padding: 8px;
+    border: none; 
+    border:solid 2px hwb(206 24% 0%);
+    border-radius: 7px;
+  }
