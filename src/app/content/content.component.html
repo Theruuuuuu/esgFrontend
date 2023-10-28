@@ -72,7 +72,7 @@
           <h1 style="font-family:微軟正黑體;font-weight:900; font-size:50px;color:rgb(0, 0, 0)">
             搜尋
           </h1>
-          <button routerLink="post/145" routerLinkActive="Active" class="btn btn-primary">台機電</button>
+          <button routerLink="data/145" routerLinkActive="Active" class="btn btn-primary">台機電</button>
           <div class="card" style="background-color:rgb(40, 255, 136) ;">
             
             <div class="input-box">
@@ -85,7 +85,8 @@
             </ul> -->
 
             <div class="list-group list-group-flush" *ngFor="let item of getJsonData">
-              <a routerLink="/post/{{item.id}}" routerLinkActive="active" class="list-group-item list-group-item-action active" style="background-color:#181A1B;color:azure">
+              <!-- 搜尋點進來之後傳入id，以便資料頁面CallAPI -->
+              <a routerLink="/data/{{item.id}}" routerLinkActive="active" class="list-group-item list-group-item-action active" style="background-color:#181A1B;color:azure">
                 {{item.companyNumber}} {{item.companyName}}
               </a>              
             </div>

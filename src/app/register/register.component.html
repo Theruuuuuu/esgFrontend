@@ -1,35 +1,13 @@
-<html>
-  <body>
-    
-    <div class="login_page">
-      <div id="container1">
+<div class="container">
+  <div cals="d-flex justify-content-center">
+    <h3>註冊</h3>
+    <input type="text" #email id="useraccount" name="useraccount" placeholder="信箱" required>
+    <br>
+    <input type="password" #ps1 placeholder="Password" id="password" required>
+    <br>
+    <input type="password" #ps2 placeholder="Confirm Password" id="confirm_password" required>
+    <br>
+    <button class="btn btn-secondary" (click)="submit(email.value, ps1.value, ps2.value)">送出</button>
 
-          <h3>註冊</h3>
-              <!--補上認證連結-->
-          <form action="content.component.html">
-            
-            <input type="text" id="useraccount" name="useraccount" placeholder="信箱" required>
-            <div class="tab"></div>
-            <input type="text" id="username" name="username" placeholder="名稱" required>
-            <div class="tab"></div>
-            <input type="password" id="password" name="password" placeholder="密碼" required>
-            <div class="tab"></div>
-            <input type="password" id="re-password" name="re_password" placeholder="確認密碼" required>
-            <div class="tab"></div>
-            <br>
-            <input type="submit" value="註冊" class="submit">          </form>  
-
-      
-      </div><!-- container1 end-->
-    </div><!-- login_page end-->
-    <div class="signup_page">
-      <div id="container2">
-        <div class="signup">  
-        </div><!-- signup end-->
-      </div><!-- container2 end-->
-    </div><!-- signup_page end--> 
- 
-  </body>
-</html>
-
-
+  </div>
+</div>

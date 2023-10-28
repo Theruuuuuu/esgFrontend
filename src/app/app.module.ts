@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { EsgDataComponent } from './esg-data/esg-data.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 Chart.register(...registerables);
@@ -26,6 +27,7 @@ Chart.register(...registerables);
     FooterComponent,
     ContentComponent,
     EsgDataComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

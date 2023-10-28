@@ -6,13 +6,14 @@ import { ContentComponent } from './content/content.component';
 import { loginComponent } from './login/login.component';
 import { registerComponent } from './register/register.component';
 import { EsgDataComponent } from './esg-data/esg-data.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 
 const routes: Routes = [
   
   {path:'', component: ContentComponent},
-  {path:'test', component: EsgDataComponent},
+  {path:'data/:id', component: EsgDataComponent},
   // 巢狀router
   {path:'post', component:PostComponent,
   children:[
@@ -28,8 +29,9 @@ const routes: Routes = [
     },
 
   ]},
-  { path: 'new-login', component: loginComponent }, // 添加新的 "login" 路由
+  { path: 'login', component: loginComponent }, // 添加新的 "login" 路由
   { path: 'register', component: registerComponent },
+  { path: 'resetPassword/:token/:email', component: ResetPasswordComponent}
 ];
 
 

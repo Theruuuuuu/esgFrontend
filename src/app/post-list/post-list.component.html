@@ -48,9 +48,9 @@
           </div>
         </div> 
         <div class="p-5 col-8">
-          <button class="btn btn-primary" value="chart" #data (click)="getChart('chart')">取得直方</button>
-          <button class="btn btn-primary" value="rader" (click)="getradar()">取得雷達</button>
-          <button class="btn btn-primary" value="pie" (click)="getdoughnut()">取得圓餅</button>
+          <button class="btn btn-primary" (click)="getChart('bar')">取得直方</button>
+          <button class="btn btn-primary" (click)="getChart('radar')">取得雷達</button>
+          <button class="btn btn-primary" (click)="getChart('pie')">取得圓餅</button>
           <div>
             <canvas id="myChart"></canvas>
           </div>

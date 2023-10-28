@@ -9,7 +9,8 @@ import { Component,OnInit } from '@angular/core';
 export class ContentComponent implements OnInit {
   getJsonData:any;
   constructor(private http:HttpClient) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
   Dokeyup(data:string){
     if(data!=''){
       this.http.get('https://esgprojapi.azurewebsites.net/api/Content/search?search='+data).subscribe(u=>{
