@@ -1,13 +1,17 @@
-<div class="container">
-  <div cals="d-flex justify-content-center">
-    <h3>註冊</h3>
-    <input type="text" #email id="useraccount" name="useraccount" placeholder="信箱" required>
-    <br>
-    <input type="password" #ps1 placeholder="Password" id="password" required>
-    <br>
-    <input type="password" #ps2 placeholder="Confirm Password" id="confirm_password" required>
-    <br>
-    <button class="btn btn-secondary" (click)="submit(email.value, ps1.value, ps2.value)">送出</button>
+<div class="login_page">
+  <div id="container1">
+      <h3>註冊</h3>
+      <br>
+          <!--補上認證連結-->
+      <form action="content.component.html">
+        
+      </form>  
+      <input type="text" #email id="useraccount" name="useraccount" placeholder="信箱" required>
+      <input type="password" #ps1 placeholder="Password" id="password" required>
+      <input type="password" #ps2 placeholder="Confirm Password" id="password" required>
+      <button  class="submit" (click)="submit(email.value, ps1.value, ps2.value)">送出</button>
+  </div><!-- container1 end-->
 
-  </div>
-</div>
+</div><!-- login_page end-->
+<br><br><br><br><br>
+  

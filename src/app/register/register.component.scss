@@ -8,6 +8,7 @@
   }
   
   h3,#register{
+    font-size: 40px;
     width: 200px;
     height: 30px;
     margin: 10px;
@@ -34,8 +35,6 @@
     height: 400px;
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
-    border-top: 10px solid hwb(206 24% 0%);
-    box-shadow: 0 0px 10px hwb(206 24% 0%);
     font-weight: bold;
     /*定位對齊*/
     position:relative;   
