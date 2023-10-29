@@ -18,7 +18,7 @@
           <a class="nav-link" routerLink="" routerLinkActive="active">postList</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">何謂ESG</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -37,7 +37,7 @@
           <a class="nav-link" routerLink="/register" [hidden]="isLogin">註冊</a>
         </li>
         <li>
-          <p [hidden]="!isLogin">{{User}}</p>
+          <p class="nav-link"  [hidden]="!isLogin">{{User}}</p>
         </li>
         <li>
           <a class="nav-link" (click)="Logout()" [hidden]="!isLogin">登出</a>
