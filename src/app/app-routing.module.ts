@@ -7,6 +7,7 @@ import { loginComponent } from './login/login.component';
 import { registerComponent } from './register/register.component';
 import { EsgDataComponent } from './esg-data/esg-data.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -31,7 +32,8 @@ const routes: Routes = [
   ]},
   { path: 'login', component: loginComponent }, // 添加新的 "login" 路由
   { path: 'register', component: registerComponent },
-  { path: 'resetPassword/:token/:email', component: ResetPasswordComponent}
+  { path: 'resetPassword/:token/:email', component: ResetPasswordComponent},
+  { path: 'User', component: UserComponent }
 ];
 
 

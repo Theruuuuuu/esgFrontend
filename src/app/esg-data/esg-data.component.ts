@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Chart } from 'chart.js';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpserviceService } from '../services/httpservice.service';
 
 @Component({
   selector: 'app-esg-data',
@@ -11,6 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class EsgDataComponent implements OnInit {
   items:any={}
+  rankItem:any={}
   id:any
   token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJ6eGMzMzA5NjM0MjU2QGdtYWlsLmNvbSIsIm5iZiI6MTY5ODAzMzU3OCwiZXhwIjoxNjk4MDM1Mzc4LCJpYXQiOjE2OTgwMzM1Nzh9.3axXQyy5gqpqxMzAQLEthzuZ9pTcmH8hUYI2Syq0Is4';
   //圖表參數
@@ -24,12 +26,21 @@ export class EsgDataComponent implements OnInit {
   esgValue:any=[];
   esgAverageValue:any=[];
 
-  constructor(private route:ActivatedRoute, private http:HttpClient, private cookie:CookieService){}
+  //是否加入最愛清單
+  isFollowing:boolean=false;
+  email:any;
+  uid:any;
+
+  constructor(private route:ActivatedRoute, private http:HttpClient, private cookie:CookieService, private accountHttp:HttpserviceService){}
   ngOnInit(): void {
     //Header用意是告訴API你船的資料類別(json、text),或者是給他驗證的TOKEN(Anthorization)
     // this.http.get('https://esgprojapi.azurewebsites.net/api/Account',
     // {headers: new HttpHeaders({'Authorization': 'Bearer ' + this.token})}).subscribe(u=>
     //   console.log(u))   
+
+    this.email = this.cookie.get('id');
+    this.uid = this.cookie.get('uid');
+    console.log(this.uid)
 
     this.route.params.subscribe(parms=>
       this.id=parms['id']
@@ -38,6 +49,12 @@ export class EsgDataComponent implements OnInit {
       u=>{
         this.items = u;
       });
+    this.http.get('https://esgprojapi.azurewebsites.net/api/Content/rank/'+this.id).subscribe(
+      u=>{
+        this.rankItem = u;
+      }
+    )
+    
     this.http.get('https://esgprojapi.azurewebsites.net/api/Content/doNum/'+this.id).subscribe(
       u=>{
         //數值資料
@@ -75,6 +92,41 @@ export class EsgDataComponent implements OnInit {
         }
       }
     );
+
+    //取得追蹤按鈕控制
+    this.accountHttp.CheckFollowingList(this.uid, this.id).subscribe(
+      u=>{
+        this.isFollowing = true
+        console.log('123')
+      },
+      err=>{
+        this.isFollowing = false
+      }
+    )
+  }
+
+  following(){
+    if(this.isFollowing == false){
+      console.log('false!')
+      this.accountHttp.AddFollowingList(this.uid, this.id).subscribe(
+        u=>{
+          this.isFollowing = true
+        },
+        err=>{
+          console.log(err.error)
+        }
+      )
+    }else{
+      this.accountHttp.DeleteFollowingList(this.uid, this.id).subscribe(
+        u=>{
+          this.isFollowing = false
+        },
+        err=>{
+          console.log(err.error)
+        }
+      )
+    }
+    
   }
 
   getChart(types:any){

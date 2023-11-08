@@ -20,14 +20,12 @@ export class NavbarComponent implements OnInit{
     }
   }
 
-  DelCookie(){
-    if(this.cookie.check('id')){
-      this.cookie.delete('id');
-    }
-  }
-
   Logout(){
     this.cookie.delete('isLogin');
-    window.location.href = '/';
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      window.location.href = '/';
+    }, 1000);
+    
   }
 }

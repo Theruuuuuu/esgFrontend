@@ -15,6 +15,8 @@ export class loginComponent implements OnInit {
   respones: any={};
   accountModel!:accountModel
   account: any;
+  //遮罩參數
+  isBlock:string='visibility:hidden';
 
   constructor(private cookie: CookieService, private http:HttpserviceService) { }
   ngOnInit(): void {
@@ -25,6 +27,12 @@ export class loginComponent implements OnInit {
     }
   }
   Submit(d1: string, d2: string) {
+    this.isBlock='';
+
+    if(d1=='' || d2=='')
+    {
+      return;
+    }
     this.accountModel = {
       account:d1,
       password:d2
@@ -32,17 +40,20 @@ export class loginComponent implements OnInit {
     
       this.http.Login(this.accountModel).subscribe(
       u => {
-        this.respones = u.body;                
+        this.respones = u.body; 
+        this.isBlock = 'visibility:hidden';
+        this.respones = this.respones.data               
         Swal.fire('成功', '登入成功', 'success').then(()=>{          
           this.addCookie()
-        });
+        });        
       },
       err => {
-        this.respones = err.error;      
+        this.respones = err.error;   
+        this.isBlock = 'visibility:hidden';   
         Swal.fire('失敗', '登入失敗', 'error');
       }
-    )    
-      this.addCookie();
+      
+    )
   }
 
   print(){
@@ -50,12 +61,12 @@ export class loginComponent implements OnInit {
   }
 
   addCookie() {
-    if (this.respones.status == 'Success') {
-      this.cookie.set('id', this.accountModel.account)
-      this.cookie.set('isLogin','')
-      //原始刷新方法
-      window.location.href = '/';
-    }
+    this.cookie.set('uid', this.respones.uid)
+    this.cookie.set('id', this.respones.email)
+    this.cookie.set('isLogin','')
+    //原始刷新方法
+    window.location.href = '/';
+
 
   }
 

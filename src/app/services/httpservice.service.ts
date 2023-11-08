@@ -18,6 +18,10 @@ export class HttpserviceService {
     })
   }
 
+  GetUser(email:string){
+    return this.http.get('https://esgprojapi.azurewebsites.net/api/Account/' + email);
+  }
+
   Login(Model:accountModel){
     return this.http.post('https://esgprojapi.azurewebsites.net/api/Account/login', Model,
       {
@@ -44,5 +48,21 @@ export class HttpserviceService {
         'Content-Type': 'application/json',
       }), observe: 'response'
     });
+  }
+
+  GetFollowingList(userId:string){
+    return this.http.get('https://esgprojapi.azurewebsites.net/api/Account/Follow/' + userId, {observe:'response'})
+  }
+
+  AddFollowingList(uid:string, companyId:string){
+    return this.http.post(`https://esgprojapi.azurewebsites.net/api/Account/Follow/${uid}/${companyId}`,null,{observe:'response'})
+  }
+
+  CheckFollowingList(uid:string, companyId:string){
+    return this.http.get(`https://esgprojapi.azurewebsites.net/api/Account/Follow/${uid}/${companyId}`,{observe:'response'})
+  }
+
+  DeleteFollowingList(uid:string, companyId:string){
+    return this.http.delete(`https://esgprojapi.azurewebsites.net/api/Account/Follow/${uid}/${companyId}`)
   }
 }

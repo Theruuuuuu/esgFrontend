@@ -4,8 +4,7 @@
           <h2>登入</h2>
           <br>
               <!--補上認證連結-->
-          <form action="content.component.html">
-            
+          <form>
           </form>  
           <input type="text" #email id="username" name="username" placeholder="帳號" [value]="account" required>
           <div class="tab"></div>
@@ -14,6 +13,7 @@
           <!-- <input type="submit" value="登入" class="submit" onclick="location.href='content.component.html'"> -->
           <input type="submit" value="登入" class="submit" (click)="Submit(email.value, password.value)">
           <button  class="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">忘記密碼?</button>
+          
       </div><!-- container1 end-->
     </div><!-- login_page end-->
    
@@ -35,3 +35,13 @@
       </div>
     </div>
     <br><br><br><br><br>
+
+    <!-- 遮罩 -->
+    <div class="blockUi d-flex align-items-center justify-content-center" [style]="isBlock" >
+      <div class="spinner-border text-success" role="status">
+        <span class="sr-only"></span>
+      </div>
+      <div>
+        <span class="spinner-text ml-3">Loading...</span>
+      </div>
+    </div>
