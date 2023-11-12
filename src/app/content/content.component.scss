@@ -6,11 +6,49 @@ body{
   .card{
     padding: 15px;
     border:none;
+
+  }
+  .card-body{
+    transition:  0.2s ease-in;
+  }
+  .card-body:hover{
+    transform: scale(0.95);
+    box-shadow: inset 600px 0px 0px 0px rgba(98, 87, 87, 0.349);
+    background: #0c9686;
+    cursor: pointer;
   }
 
   .back{
     min-height: 50vh;
     background-color: black;
+  }
+  #animated-text {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2em;
+  }
+
+  #animated-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(1em);
+    transition: opacity 0.8s, transform 0.8s;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 50%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+
   }
   
   .back1{
@@ -40,11 +78,12 @@ body{
   .form-control{
   
     height: 50px;
-    background-color:#eeeeee69;
+    background-color:rgba(97, 97, 97, 0.377)
+    
   }
   
   .form-control:focus{
-    background-color: #eeeeee69;
+    background-color: rgb(0, 66, 0);
     box-shadow: none;
     border-color: #eeeeee;
   }
@@ -73,7 +112,9 @@ body{
   
     color:#dedddd;
   }
-  
+  .btn-btn-primary{
+text-align: center;
+  }
 
 
   //新增

@@ -3,34 +3,69 @@
     font-family:微軟正黑體;  
     
   }
-  body{
-    background-color: #252525;
-  }
   
-  h2,#register{
+
+  #radius-shape-1 {
+    height: 220px;
+    width: 220px;
+    top: -60px;
+    left: -130px;
+    background: radial-gradient(#ffffff, #242424);
+    overflow: hidden;
+  }
+
+  #radius-shape-2 {
+    border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    bottom: -60px;
+    right: -110px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(#555555, #ffffff);
+    overflow: hidden;
+  }
+
+  .bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+  }
+  input::placeholder {
+    color: rgb(0, 0, 0); /* 你可以选择任何颜色 */
+  }
+  body{
+    background-color: #ffffff;
+  }
+  #form3Example4{
+    background-color: #ffffff;
+  }
+  #register{
     width: 200px;
     height: 30px;
     margin: 10px;
-    color: hwb(206 24% 0%);
+    color: hwb(12 1% 0%);
   }
   h2{
     font-size:40px;
+    font-family: "微軟正黑體";
+    font-weight: bold;
     width: 200px;
     height: 30px;
     margin: 10px;
-    color: hwb(206 24% 0%);
+    color: hwb(0 100% 0%)
   }
   #username, #password, #fullname, #comfirm_password,#username2, #password2
   {
-    width: 200px;
-    height: 30px;
+    width:87%;
+    height: 50px;
     margin: 10px;
-    color: hwb(0 0% 100%);
+    color:rgb(0, 0, 0);
+    background-color: #ffffff;
+    border: #242424;
+    border-radius: 15px;
   }
 
   h5{
     margin: 20px;
-    color: #474747;
+    color: #ffffff;
   }
   
   //內容
@@ -39,8 +74,8 @@
     padding: 10px;
     width: 240px;
     height: 305px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
+    background: linear-gradient(135deg, #006d21, #75ffdd);
+    border-radius: 10px;
 
     font-weight: bold;
     /*定位對齊*/
@@ -54,19 +89,25 @@
   
   .submit{
     color: rgb(255, 255, 255);  
-    background: #4274ff;
+    background-color:#838383;
     width: 200px;
     height: 30px;
     margin: 10px;
     padding: 5px;
-    border-radius: 5px;
-    border: 0px;
+    font-weight: bolder;
+    border-radius: 10px;
+    border: 5px;
+    transition:  0.2s ease-in;
   }
   
   .submit:hover{
-    background: #37ffe8;
+    
+    transform: scale(1.1);
+    box-shadow: inset 300px 0px 0px 0px rgb(17, 46, 207);
+    background: #01a18f;
+    cursor: pointer;
   }
-  
+    
   #container2{
     visibility: hidden;   /*剛開始消失*/
     height: 350px;
@@ -75,7 +116,7 @@
   
   #copyright{
     text-align: center;
-    color: #a3a2a3;
+    color: #ffffff;
     margin: -200px 0px 0px 0px;
     font-size: 14px;
   }
@@ -83,7 +124,7 @@
   input{
     padding: 8px;
     border: none; 
-    border:solid 2px hwb(206 24% 0%);
+    border:solid 2px hwb(147 33% 22%);
     border-radius: 7px;
   }
 
