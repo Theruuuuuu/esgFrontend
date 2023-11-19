@@ -1,57 +1,251 @@
-<div class="container pt-5 px-12">
-    <div class="row">
-        <!-- <div class="list-group col-2">
-            <a routerLink="/post/list" routerLinkActive="active" class="list-group-item list-group-item-action active" aria-current="true">
-                <i class="bi bi-info-circle-fill"></i>
-                &ensp; 基本資料
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-            <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-            <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-            <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
-        </div> -->
-        <!--<div class="col-2">
-            <div class="container1">                 
-                <div class="link">
-                    <a routerLink="./test" routerLinkActive="active" style="text-decoration:none;color:azure">
-                        <i class="bi bi-info-circle-fill"></i>
-                        &ensp;總攬
-                    </a>                                          
-                </div>
-                <div class="link">
-                    <a routerLink="test" routerLinkActive="active" style="text-decoration:none;color:azure">
-                        <i class="bi bi-info-circle-fill"></i>
-                        &ensp;圖表
-                    </a>                                          
-                </div><div class="link">
-                    <a routerLink="test" routerLinkActive="active" style="text-decoration:none;color:azure">
-                        <i class="bi bi-info-circle-fill"></i>
-                        &ensp;分析
-                    </a>                                          
-                </div><div class="link">
-                    <a routerLink="./" routerLinkActive="active" style="text-decoration:none;color:rgb(0, 165, 165)">
-                        <i class="bi bi-info-circle-fill"></i>
-                        &ensp;比率
-                    </a>                                          
-                </div>
-            </div>
-        </div>-->
-        
-        <div class="col-12">
-            <router-outlet></router-outlet>
-        </div>
+<div class="container mt-5">
+    <h1 style="text-align: center;">評分公司LOGO</h1>
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <!--設定輪播頁面-->
+    <div class="carousel-indicators"data-interval="3000">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 1"></button>
     </div>
-</div>
-<script>
-    var links = document.getElementsByClassName('link')
-    for (var i = 0; i <= links.length; i++)
-        addClass(i)
+    <!--設定輪播圖片-->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../../assets/images/companies_small/SUS.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="../../assets/images/companies_small/MSCI.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/images/companies_small/REF.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+           
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/images/companies_small/SP.jpg " class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+         
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/images/companies_small/ISS-ESG.jpg " class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/images/companies_small/FT.jpg " class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../../assets/images/companies_small/TIAWAN.jpg " class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div></div>
+  <!--設定輪播圖片結尾-->
+  <hr>
+  <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+  <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  <div class="container mt-5">
+    <h1  style="text-align: center;">各家公司評分方式</h1>
+    <hr>
+    <!--詳細評分方式介紹-->
+       <button class="button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Sustainalytics
+        </button>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <h3> 計算公司的整體ESG曝險</h3>
+            <p>首先，Sustainalytics會依據公司所屬的子產業，依據這些公司的過去紀錄、結構性外部資料(如碳排放)、公司報告、第三方報告等等來評定子產業曝險。
+                接下來，在個別公司部分，會依據公司的產品, 財務狀況, 相關事件及地理位置等等，再加上研究團隊的分析，去計算出Issue Beta</p>
+            <br>
+            <h3>  衡量公司ESG曝險中的可控制風險</h3>
+            <p>這個部分會透過可控制風險因子MRF來衡量，MRF主要介於30%-100%，代表公司理論上來說可控制的風險。
+                可控制風險要素主要包含以下四類:
+                1.確保員工合規: 職業健康與安全
+                2.對外聯繫能力: 網路安全
+                3.較複雜議題: 全球供應鏈
+                4.實體發展限制: 如科技創新與碳排放汙染</p>
+            <br>
+            <h3> 衡量在可控制風險中，公司已控制之風險</h3>
+            <p> 公司已控制風險的部分，會透過公司管理分數來衡量。而公司管理分數主要包含以下兩大部分:
+                1.管理指標: 公司的政策、管理系統、證明等等
+                2.外部關注指標: 碳排放、碳強度、爭議事件
+                緊接著，我們把
+                可控制風險*公司管理分數
+                就可以得到已控制風險。
+                已控制風險= 可控制風險*公司風險管理分數</p>
+            <br>
+            <h3>計算最終ESG分數</h3>
+            <p> 公司的ESG曝險扣除公司已控制之風險，就會得到我們想要的深藍色部分。
+                unmanged risk = 公司ESG已暴風險 - 公司已控制風險</p>
+
+           
 
 
-    function addClass(id) {
-        setTimeout(function () {
-            if (id > 0) links[id - 1].classList.remove('hover')
-            links[id].classList.add('hover')
-        }, id * 750)
-    }
-</script>
+        </div>
+      </div>
+
+    <hr>
+    <button class="button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+        MSCI
+    </button>
+  <div class="collapse" id="collapseExample2">
+    <div class="card card-body">
+        <h3>設定ESG3大面向、10大主题,以及相應的35個關鍵指標</h3>
+        <p>由 200 多名經驗豐富的研究分析師組成的全球團隊評估了 35 個 ESG 關鍵問題的數千個數據點，
+            重點關注公司核⼼業務與可能為公司帶來重⼤⾵險和/或機遇的⾏業問題之間的交叉點。相對於⾏
+            業同⾏的標準和績效，公司被評為 AAA 到 CCC 等級。</p>
+        <p>蒐集了各種公開資料，包含公司揭露、政府資料、學術資料、媒體資料等等。接下來，研究團隊會依據這些資料，
+            在35個議題上面分別給予評分，再根據議題的權重計算出三大支柱的分數。透過這三大支柱的分數，加上產業偏
+            移分數的調整，得到最終評級。</p>
+    </div>
+  </div>
+    <hr>
+
+    <button class="button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+        Refinitiv
+    </button>
+  <div class="collapse" id="collapseExample3">
+    <div class="card card-body">
+        <h3>分數計算方式
+        </h3>
+        <p>Refinitiv ESG評等採用子集數據點採用排序計算百分位分數，加總後再次計算百分位分數，
+            獲得每一項種類分數。再經由加權平均，算出每一種構面分數與ESG分數。
+            與其他兩間評等公司不同之處在於，Refinitiv ESG評等算出ESG分數之後，會再計算一個爭議分數，
+            再將ESG分數與爭議分數依照規則衍生ESGC分數(ESGC的C表示Controversy)，至此分數才計算完成</p>
+        <h3>分類標準
+        </h3>
+        <p>Refinitiv ESG評等產業分類準則依據路孚特商業分類(The Refinitiv Business Classifications，簡稱TRBC)
+            的Industry Group，將產業分成54種。此外Refinitiv ESG評等也制訂Environmental與Social每一項種類對應
+            每一種產業適用的權重，但是Refinitiv ESG評等Governance的每一項種類不受產業影響
+        </p>
+        <h3>資料特色
+        </h3>
+        <p>Refinitiv ESG評等採用排序的方法計算百分位分數，主要側重公司在產業內的相對表現，能夠降低受評公司極端表現
+            影響百分位分數的敏感度。另外將爭議分數納入總分計算門檻，將爭議分數按照受評公司的市值給予對應的權重，用來修正公司規模上的差異。
+        </p>
+
+    </div>
+  </div>
+    <hr>
+
+    <button class="button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+        S&P
+    </button>
+  <div class="collapse" id="collapseExample4">
+    <div class="card card-body">
+        <h3>針對大型企業發出CSA問卷
+        </h3>
+        <p>SAM每年都會為61個行業設計出專屬問卷，每份問卷會因產業別而有所不同，至多包含130道問題，於3月發放給企業填寫，並須附上相關資料佐證。收
+            到資料後，SAM的分析師負責驗證與核實公司的作答，並對問題評分並標註評分理由，同時將資料紀錄於SAM的數據庫。這個動作會由至少兩名SAM的分
+            析師分別進行，最後更會由第三方諮詢公司審計，以避免公司造假，算是相當嚴謹。SAM會經由收到的CSA問卷以及SAM資料庫的公開資料，依照模型對
+            該公司進行ESG評分。
+        </p>
+        <h3>針對未回覆CSA問卷的公司以及未受邀填寫問卷的公司直接以SAM資料庫資料進行ESG評估
+        </h3>
+        <p>對於沒有CAS問卷結果的公司，SAM會直接以SAM資料庫所收集到的公開資料，依照模型標準(層層加權)，對該公司進行ESG分數評估。
+        </p>
+        <h3>ESG總分計算
+        </h3>
+        <p>依前所述，SAM會由下而上在ESG三大支柱下依照個子議題計算出分別的E,S與G的分數，再透過這三大分數計算出最終的ESG分數。簡單來說，
+            公司的ESG總分是所有標準評分及其各自權重的加權平均值。ESG分數範圍從0-100，100為最好。
+        </p>
+        <h3>分數如何解讀?
+        </h3>
+        <p>在分數的解讀上，S&P ESG分數從0-100，愈高分代表表現愈好。而由於S&P DJI ESG Score主要架構在產業，以高達61個行業的客製化角度出發，
+            因此分數使用上會以跟相同產業公司來做比較，是比較合理的使用方式。跨產業也不是說不能比，但意義性可能會相對薄弱。
+
+
+            總結一下S&P DJI ESG Score的兩大特色:
+            讓大型企業參與ESG問卷填寫，能夠得到更多一般公開資料無法取得的細部資料。並透過研究人員與第三方的再三核實，以確保問卷結果的可信度。
+            SAM每年皆會針對61個產業設計客製化的問卷，在時代方面可以與時俱進，在產業方面能夠符合產業差異ESG的需求。
+            </p>
+    </div>
+  </div>
+
+    <hr>
+    <button class="button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
+        ISS ESG
+    </button>
+  <div class="collapse" id="collapseExample5">
+    <div class="card card-body">
+        <h3>指標評分</h3>
+        <p> ISS從兼顧完整性及重大性指標池中的800多個指標中，從環境、社會及管治每部分選取100個ESG指標，對8,000多家企業進行評分。所有指標均根
+            據明確定義的績效期望進行獨立評估。
+        </p>
+        <h3>分析師評估</h3>
+        <p>分析師評估是對每個ESG企業評級的補充，從永續發展機會、永續發展風險和企業治理三個面向的對評分進行總結和分析。</p>
+        <h3>產業風險</h3>
+        <p>矩陣產業在環境、社會和管治方面的風險和影響有所不同，其特定產業的重要性決定了產業在產業分類矩陣中的位置。產業的環境、社會和管治風險
+            及影響程度決定了各行業的績效要求以及產業在評等主題之間的權重分佈。例如，石油和天然氣等高風險和影響領域的公司必須提供比房地產等低風
+            險領域的公司更好的表現證明，才能獲得ISS ESG的優秀表現認證。</p>
+        <h3>權重與評分</h3>
+        <p>ISS對議題的重要性進行分析，得出其評分權重，與指標評分匯總再形成環境、社會及管治三個主題的評分以及整體評分。每個行業有四到五個關鍵議題
+            ，這些議題的權重至少佔總評分的50％。 ESG企業評等採用從A+/4.00（卓越績效）到D-/1.00（不良績效）的十二點評分系統。</p>
+        <h3>行業評級表現</h3>
+        <p>ISS根據企業在行業評級中的排名從1（最佳）到10（最低）對其進行十分位等級排序，以展現企業在行業中的評級表現。</p>
+        <h3>績效表現</h3>
+        <p>ISS把達到或超過針對特定產業的永續發展績效要求的企業定位為優秀，以彰顯其在永續發展績效方面取得的良好成績。</p>
+        
+    </div>
+  </div>
+    <hr>
+
+    <button class="button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6">
+        FTSE
+    </button>
+  <div class="collapse" id="collapseExample6">
+    <div class="card card-body">
+        <h3>依據公司特徵決定其在ESG14項主題的曝險權重</h3>
+        <p>研究團隊會將各家公司對於各個議題的曝險程度由無到高，劃分成4個等級，並分別以曝險權重分數0-3來表示。而在公司表現的部分，則會對照相對應的數據，
+            將表現區分成非常差到非常好6個等級，分數分別以0-5來表示。</p>
+        <h3>依據三大支柱底下主題區分，以簡單平均分別算出該支柱的曝險</h3>
+        <p>有了每個子主題的曝險程度以後，我們可以透過簡單平均算出他的上層(三大支柱)的曝險分數。值得注意的是，對於在該主題沒有曝險的部分，在簡單平均時亦
+            不會計入，如此一來能夠有效避免拉低平均的問題。</p>
+        <h3>依據三大支柱下各主題之分數表現，搭配主題權重，計算出三大支柱之分數</h3>
+        <p>將求得的各子主題權重與分數相乘，依三大支柱區分，分別計算出各支柱的ESG分數。
+        </p>
+        <h3>依據三大支柱之分數，搭配三大主題之曝險權重，計算ESG最後的分數</h3>
+        <p>最終分數級距一樣為0-5分，分數愈高代表ESG表現愈好。</p>
+        <h3>結論</h3>
+        <p>FTSE採取這種一層一層向上堆疊的方式，讓使用者能夠很輕易的focus在某一類議題上面，使用上相當具有彈性，非常適合作為ESG客製化指數的基礎。</p>
+    </div>
+  </div>
+    <hr>
+
+    <button class="button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7">
+        臺灣證券交易所
+    </button>
+  <div class="collapse" id="collapseExample7">
+    <div class="card card-body">
+      <h3>ESG評等機構行為準則</h3>
+     <p>參考國際證券管理機構組織（IOSCO）訂定之「ESG評等與數據產品提供者最終報告」，及日本金融廳發布之「ESG評等與數據提供單位相關之行為守則」，
+        並考慮臺灣市場的實務狀況及國際趨勢發展，制定「臺灣集中保管結算所股份有限公司ESG評等機構行為準則</p>
+    </div>
+  </div>
+    <hr>
+  </div>
+
+

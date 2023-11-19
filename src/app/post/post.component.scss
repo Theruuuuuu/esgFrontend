@@ -45,4 +45,22 @@ html, body{
  .link.hover:after{
     left:100%;
  }
+ .button {
+   background-color: #1d6d1f; /* 碧绿色背景 */
+   color: rgb(255, 255, 255); /* 白色文字 */
+   text-align: center; /* 文字居中对齐 */
+   text-decoration: none;
+   display: inline-block;
+   font-size: 25px;
+   margin: 4px 2px;
+   cursor: pointer;
+   border-radius: 8px; /* 圆角边框 */
+   padding: 10px 20px; /* 按钮内边距 */
+   transition-duration: 0.3s; /* 悬停效果持续时间 */
+ }
+ 
+ .button:hover {
+   background-color: #45a049; /* 悬停时背景颜色变化 */
+   color: white; /* 悬停时文字颜色变化 */
+ }
  

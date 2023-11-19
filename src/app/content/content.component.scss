@@ -2,7 +2,9 @@ body{
 
     background-color: #eee; 
   }
-  
+  .context_{
+font-size: 20px;
+  }
   .card{
     padding: 15px;
     border:none;
@@ -11,10 +13,11 @@ body{
   .card-body{
     transition:  0.2s ease-in;
   }
-  .card-body:hover{
-    transform: scale(0.95);
-    box-shadow: inset 600px 0px 0px 0px rgba(98, 87, 87, 0.349);
-    background: #0c9686;
+  
+  .btn btn-primary:hover{
+    transform: scale(1.5);
+    box-shadow: inset 300px 0px 0px 0px rgb(4, 7, 20);
+    background: #01a18f;
     cursor: pointer;
   }
 
