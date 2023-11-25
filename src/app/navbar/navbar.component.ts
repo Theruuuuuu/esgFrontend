@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit{
-  User:any='還沒帳號';
+  User:string='還沒帳號';
   isLogin = false;
   constructor(private cookie:CookieService){}
   ngOnInit():void{
@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit{
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       window.location.href = '/';
-    }, 1000);
+    }, 1500);
     
   }
 }

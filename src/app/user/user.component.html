@@ -23,7 +23,7 @@
               <p class="text-muted mb-1">初級會員</p>
               <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
               <div class="d-flex justify-content-center mb-2">
-                <button type="button" class="btn btn-primary">變更密碼</button>
+                <button type="button" class="btn btn-primary" (click)="forgot()">變更密碼</button>
                 <button type="button" class="btn btn-outline-primary ms-1">綁定帳戶</button>
               </div>
             </div>
@@ -111,8 +111,9 @@
                   <p class="mb-4"><span class="text-primary font-italic me-1">追蹤清單</span> Project Status
                   </p>
                   <!-- 不知道陣列空值怎寫 先這樣 -->
-                  <h1 *ngIf="followingList.length == 0">目前沒有 快去追蹤一些吧</h1>
-                  <table *ngIf="followingList.length != 0" class="table">
+                  <div class="scrollable">
+                    <h1 *ngIf="isFollow == false">目前沒有 快去追蹤一些吧</h1>
+                  <table *ngIf="isFollow == true" class="table">
                     <thead>
                       <tr>
                         <th>
@@ -134,7 +135,8 @@
                         <td><button class="btn btn-outline-success" routerLink="/data/{{item.companyId}}">GO</button></td>
                       </tr>
                     </tbody>
-                  </table>                  
+                  </table>  
+                  </div>                                 
                 </div>
               </div>
             </div>

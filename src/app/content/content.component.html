@@ -10,8 +10,8 @@
     <button routerLink="data/145" routerLinkActive="Active" class="btn btn-dark">台機電</button>
     <div class="card" style="width:135%;background-color: black;">
       <div class="form-outline">
-        <input type="text" id="searchBar" style="" class="form-control" placeholder="EX:2330 台積電" #data
-          (keyup)="Dokeyup(data.value)" />
+        <input type="text" id="searchBar" [(ngModel)]="inputValue" class="form-control" placeholder="EX:2330 台積電"
+          (keyup)="Dokeyup()" />
       </div>
       <div class="list-group list-group-flush" *ngFor="let item of getJsonData">
         <!-- 搜尋點進來之後傳入id，以便資料頁面CallAPI -->
