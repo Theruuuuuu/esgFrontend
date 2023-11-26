@@ -85,13 +85,13 @@
         <!-- tab頁籤 -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">主頁</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">產業比較</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">詳細資料</button>
           </li>          
         </ul>
         <!-- tab內容 -->
@@ -104,35 +104,29 @@
                 <div class="pb-1" style="height: 500px;">
                   <canvas id="myChart"></canvas>            
                 </div>
-                <button class="btn btn-primary" (click)="getChart('bar')">取得直方</button>
-                <button class="btn btn-primary" (click)="getChart('radar')">取得雷達</button>
-                <button class="btn btn-primary" (click)="getChart('pie')">取得圓餅</button>
-                <div class="list-group pt-1">
-                  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h2 class="mb-1">ESG典範如何自我超越？台積電向天下永續會成員分享ESG新三招</h2>
-                      <small>1 days ago</small>
-                    </div>
-                    <p class="mb-1">9月18日，「天下永續會」領軍國內逾30家企業前進台積電，取經永續典範自我超越的ESG新三招。</p>
-                    <small>(more).</small>
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h2 class="mb-1">List group item heading</h2>
-                      <small class="text-muted">3 days ago</small>
-                    </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                    <small class="text-muted">Donec id elit non mi porta.</small>
-                  </a>
+                <div class="list-group list-group-item-dark pt-1">
+                  <!-- 新聞區 -->
+                  <div *ngFor="let new of CompanyNews">
+                    <a href={{new.link}} class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h2 class="mb-1">{{new.title}}</h2>
+                        <small>{{new.date}}</small>
+                      </div>
+                      <p class="mb-1">{{new.intro}}</p>
+                    </a> 
+                  </div>
+                                   
+
                 </div>
               </div>
               <div class="col-12 col-md-3">
                 <ul class="list-group">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Morbi leo risus</li>
-                  <li class="list-group-item">Porta ac consectetur ac</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item">{{CompanyInfo.companyName}}</li>
+                  <li class="list-group-item">{{CompanyInfo.industry}}</li>
+                  <li class="list-group-item">{{CompanyInfo.description}}</li>
+                  <li class="list-group-item">董事長: {{CompanyInfo.chairman}}</li>
+                  <li class="list-group-item">公司成立日: {{CompanyInfo.establishmentDay}}</li>
+                  <a class="list-group-item" href="{{CompanyInfo.link}}">{{CompanyInfo.link}}</a>
                 </ul>
               </div>
             </div>
@@ -143,7 +137,230 @@
           </div>
           <!-- 內容3 -->
           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-            不知道放啥
+            <table class="table">
+
+                <tr>
+                  <td>
+                    MSCI
+                  </td>
+                  <td>
+                    行業調整
+                  </td>
+                  <td>
+                    Environmental
+                  </td>
+                  <td>
+                    權重
+                  </td>
+                  <td>
+                    Social
+                  </td>
+                  <td>
+                    權重
+                  </td>
+                  <td>
+                    Governance
+                  </td>
+                  <td>
+                    權重
+                  </td>
+                </tr>
+              
+              <tbody>
+                <tr>
+                  <td>
+                    {{msci.score}}
+                  </td>
+                  <td>
+                    {{msci.modi}}
+                  </td>
+                  <td>
+                    {{msci.environmental}}
+                  </td>
+                  <td>
+                    {{msci.environmentalWeights}}
+                  </td>
+                  <td>
+                    {{msci.social}}
+                  </td>
+                  <td>
+                    {{msci.socialWeights}}
+                  </td>
+                  <td>
+                    {{msci.governance}}
+                  </td>
+                  <td>
+                    {{msci.governanceWeights}}
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+            <table border="1" class="table">
+
+                <tr>
+                  <td>
+                    Refinitiv
+                  </td>
+                  <td>
+                    環境總分
+                  </td>
+                  <td>
+                    排放
+                  </td>
+                  <td>
+                    資源使用
+                  </td>
+                  <td>
+                    創新
+                  </td>
+                  <td>
+                    社會總分
+                  </td>
+                  <td>
+                    人權
+                  </td>
+                  <td>
+                    產品責任
+                  </td>
+                  <td>
+                    勞動力
+                  </td>
+                  <td>
+                    社區
+                  </td>
+                  <td>
+                    治理總分
+                  </td>
+                  <td>
+                    管理
+                  </td>
+                  <td>
+                    股東
+                  </td>
+                  <td>
+                    企業社會責任戰略
+                  </td>
+                </tr>
+
+              <tbody>
+                <tr>
+                  <td>
+                    {{refinitiv.score}}
+                  </td>
+                  <td>
+                    {{refinitiv.environment}}
+                  </td>
+                  <td>
+                    {{refinitiv.emissions}}
+                  </td>
+                  <td>
+                    {{refinitiv.resourceUse}}
+                  </td>
+                  <td>
+                    {{refinitiv.innovation}}
+                  </td>
+                  <td>
+                    {{refinitiv.social}}
+                  </td>
+                  <td>
+                    {{refinitiv.humanRights}}
+                  </td>
+                  <td>
+                    {{refinitiv.productResponsibility}}
+                  </td>
+                  <td>
+                    {{refinitiv.workforce}}
+                  </td>
+                  <td>
+                    {{refinitiv.community}}
+                  </td>
+                  <td>
+                    {{refinitiv.governance}}
+                  </td>
+                  <td>
+                    {{refinitiv.management}}
+                  </td>
+                  <td>
+                    {{refinitiv.shareholders}}
+                  </td>
+                  <td>
+                    {{refinitiv.csRstrategy}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+            <table class="table">
+
+                <tr>
+                  <td>
+                    S&P Global
+                  </td>
+                  <td>
+                    E
+                  </td>
+                  <td>
+                    S
+                  </td>
+                  <td>
+                    G
+                  </td>                  
+                </tr>
+
+              <tbody>
+                <tr>
+                  <td>
+                    {{SAP.score}}
+                  </td>
+                  <td>
+                    {{SAP.environmental}}
+                  </td>
+                  <td>
+                    {{SAP.social}}
+                  </td>
+                  <td>
+                    {{SAP.governanceAndEconomic}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <hr>
+            <table class="table">
+
+                <tr>
+                  <td>
+                    Sustainalytics
+                  </td>
+                  <td>
+                    環境風險評分
+                  </td>
+                  <td>
+                    社會風險評分
+                  </td>
+                  <td>
+                    治理風險評分
+                  </td>                  
+                </tr>
+
+              <tbody>
+                <tr>
+                  <td>
+                    {{sustainalytics.score}}
+                  </td>
+                  <td>
+                    {{sustainalytics.environment}}
+                  </td>
+                  <td>
+                    {{sustainalytics.social}}
+                  </td>
+                  <td>
+                    {{sustainalytics.governance}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         

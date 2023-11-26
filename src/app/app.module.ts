@@ -16,7 +16,6 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { UserComponent } from './user/user.component';
 
 
-
 Chart.register(...registerables);
 
 
@@ -31,7 +30,6 @@ Chart.register(...registerables);
     EsgDataComponent,
     ResetPasswordComponent,
     UserComponent,
-
   ],
   imports: [
     BrowserModule,

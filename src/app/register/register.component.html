@@ -1,17 +1,71 @@
 <div class="login_page">
-  <div id="container1">
-      <h2>註冊</h2>
+  <!--<div id="container1">            原始登入
+      <h2>登入</h2>
       <br>
-          <!--補上認證連結-->
-      <form action="content.component.html">
-        
-      </form>  
-      <input type="text" #email id="useraccount" name="useraccount" placeholder="信箱" required>
-      <input type="password" #ps1 placeholder="Password" id="password" required>
-      <input type="password" #ps2 placeholder="Confirm Password" id="password" required>
-      <button  class="submit" (click)="submit(email.value, ps1.value, ps2.value)">送出</button>
-  </div><!-- container1 end-->
 
-</div><!-- login_page end-->
-<br><br><br><br><br>
-  
+      <form>
+      </form>  
+      <input type="text" #email id="username" name="username" placeholder="帳號" [value]="account" required>
+      <div class="tab"></div>
+      <input type="password" #password id="password" name="password" placeholder="密碼" required>
+      <div class="tab"></div>
+      <input type="submit" value="登入" class="submit" onclick="location.href='content.component.html'">
+      <input type="submit" value="登入" class="submit" (click)="Submit(email.value, password.value)">
+      <button  class="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">忘記密碼?</button>
+      
+  </div>-->
+</div>
+
+<section class="background-radial-gradient overflow-hidden">
+<div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+<div class="row gx-lg-5 align-items-center mb-5">
+  <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+    <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+      平台註冊 <br />
+      <span style="color: hsl(218, 81%, 75%)">更方便的服務</span>
+    </h1><hr>
+
+  </div>
+
+  <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+    <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+    <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+    <div class="card bg-glass">
+      <div class="card-body px-4 py-5 px-md-5">
+
+          <!-- Email input -->
+          <form action="content.component.html">
+          </form>  
+          <input type="text" #email id="useraccount" name="useraccount" placeholder="信箱" required>
+          <input type="password" #ps1 placeholder="Password" id="password" required>
+          <input type="password" #ps2 placeholder="Confirm Password" id="password" required>
+          <button  class="submit" (click)="submit(email.value, ps1.value, ps2.value)">送出</button>
+
+          <!-- Register buttons 
+          <div class="text-center">
+            <p>or sign up with:</p>
+            <button type="button" >
+              <i class="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" >
+              <i class="fab fa-google"></i>
+            </button>
+
+            <button type="button" >
+              <i class="fab fa-twitter"></i>
+            </button>
+
+            <button type="button"  style="color: aqua;">
+              <i class="fab fa-github"></i>
+            </button>
+          </div>-->
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- Section: Design Block -->

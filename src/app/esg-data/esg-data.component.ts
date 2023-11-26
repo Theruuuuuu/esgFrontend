@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Chart } from 'chart.js';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpserviceService } from '../services/httpservice.service';
+import { Company } from '../Model/Model';
 
 @Component({
   selector: 'app-esg-data',
@@ -11,10 +12,37 @@ import { HttpserviceService } from '../services/httpservice.service';
   styleUrls: ['./esg-data.component.scss']
 })
 export class EsgDataComponent implements OnInit {
-  items:any={}
+  items:Company = {
+    id: 0,
+    companyNumber: '-',
+    companyName: '-',
+    susESG: '-',
+    msciESG: '-',
+    ftseESG: '-',
+    issESG: '-',
+    sapESG: '-',
+    twCompanyRank: '-',
+    refi: '-'
+  }
   rankItem:any={}
-  id:any
-  token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJ6eGMzMzA5NjM0MjU2QGdtYWlsLmNvbSIsIm5iZiI6MTY5ODAzMzU3OCwiZXhwIjoxNjk4MDM1Mzc4LCJpYXQiOjE2OTgwMzM1Nzh9.3axXQyy5gqpqxMzAQLEthzuZ9pTcmH8hUYI2Syq0Is4';
+  CompanyNews:any={}
+  CompanyInfo:any={
+    companyName:'-',
+    industry:'-',
+    description:'-',
+    chairman:'-',
+    establishmentDay:'-',
+    link:'-'
+  }
+  id:string='' //公司ID
+
+  //各項ESG資料
+  msci:any={}
+  refinitiv:any={}
+  SAP:any={}
+  sustainalytics:any={}
+
+
   //圖表參數
   myChart:any
   config:any;
@@ -45,9 +73,38 @@ export class EsgDataComponent implements OnInit {
     this.route.params.subscribe(parms=>
       this.id=parms['id']
     );
-    this.http.get('https://esgprojapi.azurewebsites.net/api/Content/'+this.id).subscribe(
+    this.http.get<Company>('https://esgprojapi.azurewebsites.net/api/Content/'+this.id).subscribe(
       u=>{
         this.items = u;
+
+        //公司基本資料
+        this.http.get('https://esgprojapi.azurewebsites.net/api/Content/CompanyInfo/'+ this.items.companyNumber).subscribe(
+          u=>{
+            this.CompanyInfo = u
+          }
+        )
+
+        //各項ESG資料
+        this.http.get('https://esgprojapi.azurewebsites.net/api/Content/MSCI/'+ this.items.companyNumber).subscribe(
+          u=>{
+            this.msci = u
+          }
+        )
+        this.http.get('https://esgprojapi.azurewebsites.net/api/Content/Refinitiv/'+ this.items.companyNumber).subscribe(
+          u=>{
+            this.refinitiv = u
+          }
+        )
+        this.http.get('https://esgprojapi.azurewebsites.net/api/Content/SAP/'+ this.items.companyNumber).subscribe(
+          u=>{
+            this.SAP = u
+          }
+        )
+        this.http.get('https://esgprojapi.azurewebsites.net/api/Content/Sustainalytics/'+ this.items.companyNumber).subscribe(
+          u=>{
+            this.sustainalytics = u
+          }
+        )
       });
     this.http.get('https://esgprojapi.azurewebsites.net/api/Content/rank/'+this.id).subscribe(
       u=>{
@@ -90,7 +147,7 @@ export class EsgDataComponent implements OnInit {
           //沒有就直接叫
           this.myChart=new Chart("myChart", this.getConfig('radar'));
         }
-      }
+      }      
     );
 
     //取得追蹤按鈕控制
@@ -103,6 +160,16 @@ export class EsgDataComponent implements OnInit {
         this.isFollowing = false
       }
     )
+
+    // 取得新聞
+    this.http.get('https://esgprojapi.azurewebsites.net/api/Content/News/'+this.id).subscribe(
+      u=>{
+        console.log(u)
+        this.CompanyNews = u
+      }
+    )
+
+    
   }
 
   following(){
@@ -142,12 +209,12 @@ export class EsgDataComponent implements OnInit {
       datasets: [{
         label: 'esgData',
         data: this.esgValue,
-        borderWidth: 1
+        borderWidth: 4
       },
       {
         label: '平均',
         data: this.esgAverageValue,
-        borderWidth: 1
+        borderWidth: 2,
       }]
     }
 
@@ -175,8 +242,28 @@ export class EsgDataComponent implements OnInit {
             r: {
               beginAtZero: true,
               min:0,
-              max:100
+              max:100,
+              grid:{
+                color:'#afdbbb'
+              },
+              ticks:{
+                display:false
+              },
+              pointLabels:{
+                color:'#fcfcfc',
+                font:{
+                  size:15,
+                }
+              }
             }
+          },
+          elements: {
+            point: {
+              radius: 0, // 結果的角度圓點大小
+            },
+            line: {
+              borderWidth: 1, //結果線的寬度
+            },
           }
         }            
       }

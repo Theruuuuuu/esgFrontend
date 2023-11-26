@@ -1,3 +1,35 @@
 .card-body{
     font-size: 20px;
 }
+/* 基本樣式 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #00796b; /* 深綠色邊框 */
+    padding: 8px;
+    text-align: left;
+}
+
+/* 表頭樣式 */
+th {
+    background-color: #004d40; /* 深綠色背景 */
+    color: #ffffff; /* 白色文字 */
+}
+
+/* 偶數行背景色 */
+tr:nth-child(even) {
+    background-color: #00837c; /* 淺綠色背景 */
+}
+
+/* 奇數行背景色 */
+tr:nth-child(odd) {
+    background-color: #015c54; /* 淺藍色背景 */
+}
+
+/* 滑鼠懸停時的效果 */
+tr:hover {
+    background-color: #65b8af; /* 中綠色背景 */
+}
